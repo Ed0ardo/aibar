@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIBar</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <div id="search-window" class="window">
+      <div class="canvas">
+        <div id="ai-selector" class="ai-selector">
+          <img id="logo" src="" alt="logo" />
+          <div id="ai-dropdown" class="ai-dropdown hidden">
+            <div id="ai-list" class="ai-list"></div>
+          </div>
+        </div>
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Ask AI anything..."
+        />
+      </div>
+    </div>
+
+    <div id="settings-window" class="window">
+      <div class="main-frame" data-tauri-drag-region>
+        <div class="content-frame">
+          <div class="theme-frame">
+            <p>Search Bar Appearance</p>
+            <label
+              ><input type="radio" name="theme" value="dark" /> Dark Mode</label
+            >
+            <label
+              ><input type="radio" name="theme" value="light" /> Light
+              Mode</label
+            >
+          </div>
+
+          <div class="ai-engines-frame">
+            <div class="ai-engines-header">
+              <p>AI Engines</p>
+              <button id="add-ai-button" class="add-ai-button">+ Add AI</button>
+            </div>
+            <div id="ai-engines-list" class="ai-engines-list"></div>
+          </div>
+
+          <div class="shortcut-frame">
+            <p>Shortcut Hotkey</p>
+            <input type="text" id="shortcut-input" placeholder="Alt+Space" />
+          </div>
+
+          <div class="autostart-frame">
+            <p>System Integration</p>
+            <label>
+              <input type="checkbox" id="autostart-checkbox" />
+              Start AIBar when computer starts
+            </label>
+          </div>
+        </div>
+
+        <div class="button-frame">
+          <button id="save-button" class="save-button">Save and Close</button>
+          <button id="cancel-button" class="cancel-button">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

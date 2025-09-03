@@ -1,0 +1,27 @@
+[package]
+name = "aibar"
+version = "0.1.0"
+description = "AI Search Bar"
+authors = ["you"]
+license = ""
+repository = ""
+default-run = "aibar"
+edition = "2021"
+rust-version = "1.60"
+
+[build-dependencies]
+tauri-build = { version = "1.5.2", features = [] }
+
+[[bin]]
+name = "aibar"
+path = "main.rs"
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.0", features = ["api-all", "system-tray", "global-shortcut"] }
+auto-launch = "0.5"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

@@ -1,0 +1,672 @@
+/* Search Window Styles */
+#search-window {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 550px;
+  background-color: transparent;
+  border-radius: 20px;
+  overflow: visible;
+  z-index: 1000;
+}
+
+.canvas {
+  background-color: var(--search-bg-color);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--search-border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.ai-selector {
+  position: relative;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  mix-blend-mode: difference;
+}
+
+#logo:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.ai-dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--search-bg-color);
+  border: 1px solid var(--search-border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1001;
+  min-width: 200px;
+  max-height: 160px;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+.ai-dropdown.hidden {
+  display: none;
+}
+
+.ai-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.ai-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ai-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ai-item.selected {
+  background-color: var(--accent-color);
+}
+
+.ai-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  border-radius: 4px;
+  mix-blend-mode: difference;
+}
+
+.ai-item span {
+  color: var(--search-text-color);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.search-input {
+  background-color: transparent;
+  border: none;
+  color: var(--search-text-color);
+  font-size: 18px;
+  flex-grow: 1;
+  height: 40px;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: var(--search-placeholder-color);
+  opacity: 0.7;
+}
+
+/* Settings Window */
+#settings-window {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  border-radius: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.main-frame {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content-frame {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.theme-frame,
+.ai-engines-frame,
+.shortcut-frame,
+.autostart-frame {
+  background-color: var(--bg-color-light);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.ai-engines-frame {
+  max-height: 300px;
+}
+
+.ai-engines-header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ai-engines-header p {
+  font-weight: 600;
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  flex-grow: 1;
+}
+
+.add-ai-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.add-ai-button:hover {
+  background-color: #0056b3;
+}
+
+.ai-engines-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.ai-engine-item {
+  display: flex;
+  align-items: center;
+  justify-content: between;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: var(--input-bg);
+}
+
+.ai-engine-info {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.ai-engine-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  border-radius: 4px;
+  mix-blend-mode: difference;
+}
+
+.ai-engine-details {
+  flex-grow: 1;
+}
+
+.ai-engine-name {
+  font-weight: 600;
+  color: var(--fg-color);
+  margin-bottom: 2px;
+}
+
+.ai-engine-url {
+  font-size: 12px;
+  color: var(--fg-color);
+  opacity: 0.7;
+}
+
+.ai-engine-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.default-badge {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.set-default-btn,
+.delete-ai-btn {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.set-default-btn {
+  background-color: var(--button-bg);
+  color: var(--fg-color);
+}
+
+.set-default-btn:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.delete-ai-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-ai-btn:hover {
+  background-color: #c82333;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  border-radius: 20px;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: var(--bg-color);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--fg-color);
+  font-size: 18px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--fg-color);
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.close-modal:hover {
+  background-color: var(--border-color);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--fg-color);
+  font-weight: 500;
+}
+
+.input-group input[type="text"],
+.input-group input[type="file"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--fg-color);
+  font-size: 14px;
+}
+
+.input-group small {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent-color);
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.modal-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.save-button,
+.cancel-button,
+.delete-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.save-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-button {
+  background-color: var(--button-bg);
+  color: var(--fg-color);
+}
+
+.cancel-button:hover {
+  background-color: var(--border-color);
+}
+
+/* Delete Confirmation Modal Styles */
+.delete-confirm-content {
+  max-width: 420px;
+}
+
+.delete-message {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.delete-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.delete-question {
+  color: var(--fg-color);
+  font-size: 16px;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.delete-question strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.delete-warning {
+  color: var(--fg-color);
+  opacity: 0.7;
+  font-size: 13px;
+  margin: 0;
+  font-style: italic;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+[data-theme="light"] .delete-question {
+  color: var(--fg-color);
+}
+
+[data-theme="light"] .delete-question strong {
+  color: var(--accent-color);
+}
+
+[data-theme="light"] .delete-warning {
+  color: var(--fg-color);
+  opacity: 0.6;
+}
+
+/* Other Settings Styles */
+.theme-frame p,
+.shortcut-frame p,
+.autostart-frame p {
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--accent-color);
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+input[type="radio"] + label {
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+}
+
+label {
+  margin-right: 15px;
+}
+
+.shortcut-frame input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--input-bg);
+  color: var(--fg-color);
+}
+
+.button-frame {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.button-frame button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 12px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+/* Theme Variables */
+:root {
+  /* Settings window colors */
+  --bg-color: #2c2c2c;
+  --bg-color-light: #3a3a3a;
+  --fg-color: #f0f0f0;
+  --accent-color: #007acc;
+  --border-color: #555;
+  --input-bg: #444;
+  --button-bg: #555;
+
+  /* Search bar colors (dark theme) */
+  --search-bg-color: #2c2c2c;
+  --search-text-color: #f0f0f0;
+  --search-placeholder-color: #888;
+  --search-border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  /* Settings window colors */
+  --bg-color: #f0f0f0;
+  --bg-color-light: #e0e0e0;
+  --fg-color: #212121;
+  --accent-color: #007acc;
+  --border-color: #ccc;
+  --input-bg: #fff;
+  --button-bg: #ddd;
+
+  /* Search bar colors (light theme) */
+  --search-bg-color: #f0f0f0;
+  --search-text-color: #212121;
+  --search-placeholder-color: #666;
+  --search-border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Hide windows by default */
+.window {
+  display: none;
+}
+
+.window.active {
+  display: block;
+}
+
+/* Scrollbar styling */
+.ai-dropdown::-webkit-scrollbar,
+.ai-engines-list::-webkit-scrollbar,
+.content-frame::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ai-dropdown::-webkit-scrollbar-track,
+.ai-engines-list::-webkit-scrollbar-track,
+.content-frame::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ai-dropdown::-webkit-scrollbar-thumb,
+.ai-engines-list::-webkit-scrollbar-thumb,
+.content-frame::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.ai-dropdown::-webkit-scrollbar-thumb:hover,
+.ai-engines-list::-webkit-scrollbar-thumb:hover,
+.content-frame::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Drag and Drop Styles for AI Engines List */
+.ai-engine-item {
+  cursor: default;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.ai-engine-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ai-engine-item.drag-over {
+  border: 2px dashed #007acc !important;
+  background-color: rgba(0, 122, 204, 0.1) !important;
+}
+
+.ai-engine-drag-handle {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: grab;
+  color: #666;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  user-select: none;
+  padding: 8px 4px;
+  z-index: 10;
+  border-radius: 4px;
+}
+
+.ai-engine-drag-handle:hover {
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ai-engine-drag-handle:active {
+  cursor: grabbing;
+}
+
+.ai-engine-item[draggable="true"] {
+  cursor: move;
+}
+
+.ai-engine-item[draggable="true"] .ai-engine-drag-handle {
+  cursor: grabbing;
+}
+
+.ai-engine-info {
+  margin-left: 40px;
+}
+
+[data-theme="dark"] .ai-engine-item.drag-over {
+  border-color: #4fc3f7 !important;
+  background-color: rgba(79, 195, 247, 0.1) !important;
+}
+
+[data-theme="dark"] .ai-engine-drag-handle {
+  color: #999;
+}
+
+[data-theme="dark"] .ai-engine-drag-handle:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
