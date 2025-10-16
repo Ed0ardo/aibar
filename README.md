@@ -79,6 +79,11 @@ Here are some example values you can enter in the settings panel to add popular 
 - **Name**: `Mistral`
 - **URL**: `https://chat.mistral.ai/chat/?q=`
 
+**Google (AI Mode):**
+
+- **Name**: `Google (AI Mode)`
+- **URL**: `https://www.google.com/search?udm=50&q=`
+
 ## 📦 Build
 
 To build the application for production, run:
